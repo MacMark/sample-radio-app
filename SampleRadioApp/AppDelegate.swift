@@ -42,14 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
-        if event.type == UIEventType.RemoteControl {
-            if event.subtype == UIEventSubtype.RemoteControlPlay {
+        if event!.type == UIEventType.RemoteControl {
+            if event!.subtype == UIEventSubtype.RemoteControlPlay {
                 print("received remote play")
                 RadioPlayer.sharedInstance.play()
-            } else if event.subtype == UIEventSubtype.RemoteControlPause {
+            } else if event!.subtype == UIEventSubtype.RemoteControlPause {
                 print("received remote pause")
                 RadioPlayer.sharedInstance.pause()
-            } else if event.subtype == UIEventSubtype.RemoteControlTogglePlayPause {
+            } else if event!.subtype == UIEventSubtype.RemoteControlTogglePlayPause {
                 print("received toggle")
                 RadioPlayer.sharedInstance.toggle()
             }
