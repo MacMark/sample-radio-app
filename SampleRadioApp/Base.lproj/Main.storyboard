@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleRadioApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RadioHH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrX-IY-m6b">
-                                <rect key="frame" x="16" y="20" width="68" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrX-IY-m6b">
+                                <rect key="frame" x="276" y="475" width="49" height="45"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,8 +28,19 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysa-vp-gFU"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Radio_Hamburg_2184x184.png" translatesAutoresizingMaskIntoConstraints="NO" id="WXk-jo-oIv">
+                                <rect key="frame" x="208" y="265" width="184" height="184"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IrX-IY-m6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A95-Z8-lBx"/>
+                            <constraint firstItem="WXk-jo-oIv" firstAttribute="centerX" secondItem="IrX-IY-m6b" secondAttribute="centerX" id="F7O-cv-bsl"/>
+                            <constraint firstItem="IrX-IY-m6b" firstAttribute="top" secondItem="WXk-jo-oIv" secondAttribute="bottom" constant="26" id="d4M-GN-0t5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IrX-IY-m6b" secondAttribute="bottom" constant="80" id="ftD-XT-h8B"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="IrX-IY-m6b" id="fxp-yV-YzV"/>
@@ -36,4 +50,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Radio_Hamburg_2184x184.png" width="184" height="184"/>
+    </resources>
 </document>
