@@ -41,16 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    override func remoteControlReceivedWithEvent(event: UIEvent) {
+    override func remoteControlReceivedWithEvent(event: UIEvent?) {
         if event.type == UIEventType.RemoteControl {
             if event.subtype == UIEventSubtype.RemoteControlPlay {
-                println("received remote play")
+                print("received remote play")
                 RadioPlayer.sharedInstance.play()
             } else if event.subtype == UIEventSubtype.RemoteControlPause {
-                println("received remote pause")
+                print("received remote pause")
                 RadioPlayer.sharedInstance.pause()
             } else if event.subtype == UIEventSubtype.RemoteControlTogglePlayPause {
-                println("received toggle")
+                print("received toggle")
                 RadioPlayer.sharedInstance.toggle()
             }
         }
