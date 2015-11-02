@@ -21,19 +21,21 @@ class ViewController: UIViewController {
         if NSClassFromString("MPNowPlayingInfoCenter") != nil {
 //            let image:UIImage = UIImage(named: "logo_player_background")!
 //            let albumArt = MPMediaItemArtwork(image: image)
-            let songInfo: NSMutableDictionary = [
-                MPMediaItemPropertyTitle: "Radio Brasov",
-                MPMediaItemPropertyArtist: "87,8fm",
+            let songInfo = [
+                MPMediaItemPropertyTitle : "Radio Brasov",
+                MPMediaItemPropertyArtist : "87,8fm"
 //                MPMediaItemPropertyArtwork: albumArt
             ]
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = songInfo as [NSObject : AnyObject] as [NSObject : AnyObject]
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = songInfo
         }
-        if (AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)) {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             print("Receiving remote control events")
             UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
-        } else {
+        } catch {
             print("Audio Session error.")
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
